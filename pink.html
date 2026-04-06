@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Partner Colleges | Distance MBA Scholarships</title>
+    <!-- Bootstrap 5 + Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f7fa;
+      }
+
+      /* Simple, clean navbar */
+      .navbar {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #2c5e2c;
+      }
+
+      .navbar-brand span {
+        color: #e67e22;
+      }
+
+      /* Hero section */
+      .hero {
+        background: linear-gradient(135deg, #e8f5e9 0%, #fff8f0 100%);
+        padding: 3rem 0;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #2c5e2c;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero h1 span {
+        color: #e67e22;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        color: #5a6e5a;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+
+      .badge-sponsor {
+        background: #fff3e0;
+        color: #e67e22;
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+
+      /* Section title */
+      .section-title {
+        text-align: center;
+        margin: 2rem 0 1.5rem 0;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2c5e2c;
+      }
+
+      .section-title p {
+        color: #6c7a6c;
+        font-size: 0.95rem;
+      }
+
+      /* Simple College Card - Clean design */
+      .college-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        height: 100%;
+        border: 1px solid #eef2ee;
+      }
+
+      .college-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-img {
+        height: 160px;
+        width: 100%;
+        object-fit: cover;
+        background: #e8f0e8;
+      }
+
+      .card-body {
+        padding: 1rem;
+      }
+
+      .college-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #2c5e2c;
+        margin-bottom: 0.25rem;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 0.5rem;
+      }
+
+      .stars {
+        color: #f5b042;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+      }
+
+      .reviews {
+        font-size: 0.7rem;
+        color: #8a9a8a;
+      }
+
+      .program {
+        font-size: 0.75rem;
+        background: #f0f7f0;
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        margin-bottom: 0.6rem;
+        color: #2c5e2c;
+        font-weight: 500;
+      }
+
+      .scholarship {
+        font-size: 0.75rem;
+        color: #e67e22;
+        background: #fff4e8;
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+
+      .btn-apply {
+        background: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 0.45rem 0;
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: 100%;
+        transition: background 0.2s;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+      }
+
+      .btn-apply:hover {
+        background: #d35400;
+        color: white;
+      }
+
+      /* Simple carousel controls */
+      .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 2;
+        border: 1px solid #e0e0e0;
+      }
+
+      .carousel-control i {
+        font-size: 1.2rem;
+        color: #e67e22;
+      }
+
+      .carousel-control:hover {
+        background: #e67e22;
+      }
+      .carousel-control:hover i {
+        color: white;
+      }
+
+      /* Scroll container */
+      .scroll-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        padding: 0.5rem 0 1rem 0;
+        scrollbar-width: thin;
+      }
+      .scroll-container::-webkit-scrollbar {
+        height: 5px;
+      }
+      .scroll-container::-webkit-scrollbar-track {
+        background: #e0e8e0;
+        border-radius: 10px;
+      }
+      .scroll-container::-webkit-scrollbar-thumb {
+        background: #e67e22;
+        border-radius: 10px;
+      }
+
+      .college-card {
+        width: 280px;
+        flex-shrink: 0;
+      }
+
+      /* Footer */
+      .footer {
+        background: white;
+        padding: 1.5rem;
+        text-align: center;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: #7a8a7a;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.6rem;
+        }
+        .college-card {
+          width: 260px;
+        }
+        .section-title h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Simple Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Edu<span>Connect</span></a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="badge-sponsor">
+          <i class="bi bi-star-fill"></i> Sponsored
+        </div>
+        <h1>Featured <span>Partner Colleges</span></h1>
+        <p>Admissions open — Apply now for special Distance MBA scholarships</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="section-title">
+        <h2>Distance MBA Programs</h2>
+        <p>Top-ranked universities with exclusive scholarship offers</p>
+      </div>
+
+      <!-- Carousel with scroll -->
+      <div class="position-relative">
+        <!-- Scroll Container -->
+        <div id="collegesScroll" class="scroll-container">
+          <!-- College 1: Apex Business School -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/2d6a4f/white?text=Apex+Business"
+              alt="Apex Business School"
+            />
+            <div class="card-body">
+              <div class="college-name">Apex Business School</div>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="reviews">(1,240 reviews)</span>
+              </div>
+              <div class="program">🎓 Distance MBA - Marketing & Finance</div>
+              <div class="scholarship">💰 Early Bird: 25% off tuition</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 2: Sterling Institute of Management -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/1e6f5c/white?text=Sterling+Mgmt"
+              alt="Sterling Institute"
+            />
+            <div class="card-body">
+              <div class="college-name">Sterling Institute of Management</div>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="reviews">(980 reviews)</span>
+              </div>
+              <div class="program">
+                🎓 Global Distance MBA + Dual Specialization
+              </div>
+              <div class="scholarship">💰 Merit cum Means: up to 40%</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 3: Elite School of Business -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/9c2e2e/white?text=Elite+Business"
+              alt="Elite School"
+            />
+            <div class="card-body">
+              <div class="college-name">Elite School of Business</div>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="reviews">(2,100 reviews)</span>
+              </div>
+              <div class="program">🎓 Executive Distance MBA</div>
+              <div class="scholarship">💰 Women Leadership Grant: 35%</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 4: Vanguard University -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/2c3e50/white?text=Vanguard+Uni"
+              alt="Vanguard University"
+            />
+            <div class="card-body">
+              <div class="college-name">Vanguard University</div>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="reviews">(754 reviews)</span>
+              </div>
+              <div class="program">🎓 MBA in Digital Transformation</div>
+              <div class="scholarship">💰 Corporate Partner: 30% off</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 5: Oxford Brookes Global (Partner) -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/4a6b3f/white?text=Oxford+Brookes"
+              alt="Oxford Brookes"
+            />
+            <div class="card-body">
+              <div class="college-name">Oxford Brookes Global (Partner)</div>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="reviews">(3,420 reviews)</span>
+              </div>
+              <div class="program">🎓 International Distance MBA</div>
+              <div class="scholarship">💰 Global Excellence: £2k Grant</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 6: Nexus Management Academy -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/7a4c2c/white?text=Nexus+Academy"
+              alt="Nexus Academy"
+            />
+            <div class="card-body">
+              <div class="college-name">Nexus Management Academy</div>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="reviews">(612 reviews)</span>
+              </div>
+              <div class="program">🎓 MBA in HR & Operations</div>
+              <div class="scholarship">💰 Referral scholarship: 20%</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+
+          <!-- College 7: Westbridge University -->
+          <div class="college-card">
+            <img
+              class="card-img"
+              src="https://placehold.co/600x400/5d3a1a/white?text=Westbridge"
+              alt="Westbridge University"
+            />
+            <div class="card-body">
+              <div class="college-name">Westbridge University</div>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="reviews">(880 reviews)</span>
+              </div>
+              <div class="program">🎓 Online MBA - Business Analytics</div>
+              <div class="scholarship">💰 Tech Scholarship: $1500</div>
+              <a href="#" class="btn-apply">Apply Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simple Navigation Arrows -->
+        <div class="carousel-control" id="prevBtn" style="left: -18px">
+          <i class="bi bi-chevron-left"></i>
+        </div>
+        <div class="carousel-control" id="nextBtn" style="right: -18px">
+          <i class="bi bi-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Simple Info Strip -->
+      <div class="row mt-5 text-center">
+        <div class="col-md-4 mb-3">
+          <div class="p-3 bg-white rounded-3 border" style="background: white">
+            <i
+              class="bi bi-trophy-fill"
+              style="color: #e67e22; font-size: 1.5rem"
+            ></i>
+            <h6 class="mt-2 fw-bold" style="color: #2c5e2c">Top Ranked</h6>
+            <small class="text-muted">A+ accredited partner colleges</small>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-3 bg-white rounded-3 border" style="background: white">
+            <i
+              class="bi bi-cash-stack"
+              style="color: #e67e22; font-size: 1.5rem"
+            ></i>
+            <h6 class="mt-2 fw-bold" style="color: #2c5e2c">Scholarships</h6>
+            <small class="text-muted">Up to 40% tuition waiver</small>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-3 bg-white rounded-3 border" style="background: white">
+            <i
+              class="bi bi-clock-history"
+              style="color: #e67e22; font-size: 1.5rem"
+            ></i>
+            <h6 class="mt-2 fw-bold" style="color: #2c5e2c">Limited Seats</h6>
+            <small class="text-muted">Apply before deadline</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          © 2025 EduConnect | Featured Partner Colleges | Distance MBA
+          Admissions
+        </p>
+        <p class="mt-1">
+          <small
+            >Scholarships available for eligible candidates. Terms apply.</small
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple scroll carousel functionality
+      const scrollContainer = document.getElementById("collegesScroll");
+      const prevButton = document.getElementById("prevBtn");
+      const nextButton = document.getElementById("nextBtn");
+
+      if (scrollContainer && prevButton && nextButton) {
+        const scrollStep = 280;
+
+        prevButton.addEventListener("click", () => {
+          scrollContainer.scrollBy({
+            left: -scrollStep,
+            behavior: "smooth",
+          });
+        });
+
+        nextButton.addEventListener("click", () => {
+          scrollContainer.scrollBy({
+            left: scrollStep,
+            behavior: "smooth",
+          });
+        });
+      }
+
+      // Apply button handler
+      const applyButtons = document.querySelectorAll(".btn-apply");
+      applyButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const card = btn.closest(".college-card");
+          let collegeName = "this college";
+          if (card) {
+            const nameDiv = card.querySelector(".college-name");
+            if (nameDiv) collegeName = nameDiv.innerText;
+          }
+          alert(
+            `🎓 Application started for ${collegeName}\n\n✅ Distance MBA program\n✅ Scholarship pre-qualified\n✅ Admission counselor will contact you within 24 hours.`,
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
